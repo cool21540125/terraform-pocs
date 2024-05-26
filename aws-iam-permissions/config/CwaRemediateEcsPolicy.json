@@ -1,0 +1,37 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "EcsTaskOperatePermissions",
+            "Effect": "Allow",
+            "Action": [
+				"ecs:UpdateService",
+				"ecs:List*",
+				"ecs:Describe*"
+            ],
+            "Resource": "arn:aws:ecs:*:*:service/*/*"
+        },
+        {
+            "Sid": "EcsTaskExecutionRelatedPermissions",
+            "Effect": "Allow",
+            "Action": [
+                "ecr:GetAuthorizationToken",
+                "ecr:BatchCheckLayerAvailability",
+                "ecr:GetDownloadUrlForLayer",
+                "ecr:BatchGetImage",
+                "logs:CreateLogStream",
+                "logs:PutLogEvents",
+                "logs:CreateLogGroup"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Sid": "PassRole",
+            "Effect": "Allow",
+            "Action": [
+                "iam:PassRole"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

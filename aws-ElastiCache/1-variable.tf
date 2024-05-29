@@ -6,7 +6,7 @@ variable "aws_account" {
 }
 
 variable "topic_name" {
-  default = ""
+  default = "notification-topic-name"
 }
 
 variable "name" {

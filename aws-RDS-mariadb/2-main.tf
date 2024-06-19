@@ -24,7 +24,7 @@
 #   # password             = random_password.rds_master_password.result
 #   publicly_accessible = true
 #   # port                = 3306
-#   # username             = "weibysre"
+#   # username             = "sre"
 #   # password             = "2wsx$RFV1234zxcv"
 #   availability_zone = "us-west-2b"
 #   network_type      = "IPV4"
@@ -89,7 +89,7 @@ resource "aws_db_instance" "poc_rds_single_instance" {
   # password             = random_password.rds_master_password.result
   publicly_accessible  = true
   port                 = 3306
-  username             = "weibysre"
+  username             = "sre"
   password             = "2wsx$RFV1234zxcv"
   db_subnet_group_name = data.aws_db_subnet_group.ds_db_subnet_group.name
   availability_zone    = "us-west-2b"
@@ -151,7 +151,7 @@ resource "aws_db_instance" "poc_rds_single_instance" {
 #   # password             = random_password.rds_master_password.result
 #   publicly_accessible = true
 #   # port                = 3306
-#   # username             = "weibysre"
+#   # username             = "sre"
 #   # password             = "2wsx$RFV1234zxcv"
 #   availability_zone = "us-west-2a"
 #   network_type      = "IPV4"

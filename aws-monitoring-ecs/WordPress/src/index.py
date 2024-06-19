@@ -58,26 +58,6 @@ def lambda_handler(event, context):
             service="takeorderWordpress",
         )
 
-    elif (
-        alb == "app/OfficialService/ac9481520866a675"
-        and tg == "targetgroup/ecs-Server-weibyWordpress/6093c14c34470a56"
-    ):
-        ecs = ECS(
-            client=client,
-            cluster="ServerAPI",
-            service="weibyWordpress",
-        )
-
-    elif (
-        alb == "app/WeibyOfficialWebsite/6c1c500f98235cca"
-        and tg == "targetgroup/ecs-weibyBlog/235c2213bcab6376"
-    ):
-        ecs = ECS(
-            client=client,
-            cluster="ServerAPI",
-            service="weibyBlog",
-        )
-
     else:
         # 截至 2024/05, 只有上述 3 個 WordPress 的 ALB. 如果發生此錯誤, 表示可能是:
         # CloudWatch Alarm 誤把 action 拋到這個 Lambda Function (去修改你的 CloudWatch Alarm 的 Lambda action 吧)

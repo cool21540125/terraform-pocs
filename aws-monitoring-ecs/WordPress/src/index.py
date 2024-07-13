@@ -49,13 +49,13 @@ def lambda_handler(event, context):
         raise
 
     if (
-        alb == "app/takeorder-server/cffdf30aea0860f3"
-        and tg == "targetgroup/ecs-takeor-takeorderWordpress/45e40abd9e089b79"
+        alb == "app/server/cffdf30aea0860f3"
+        and tg == "targetgroup/ecs-takeor-blogWordpress/45e40abd9e089b79"
     ):
         ecs = ECS(
             client=client,
-            cluster="takeorder",
-            service="takeorderWordpress",
+            cluster="blog",
+            service="blogWordpress",
         )
 
     else:

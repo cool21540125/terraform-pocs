@@ -29,7 +29,7 @@
 #   availability_zone = "us-west-2b"
 #   network_type      = "IPV4"
 #   vpc_security_group_ids = [
-#     "sg-0a627d789fef2836f" # iStore
+#     "sg-0a627d789fef2836f"
 #   ]
 
 #   ### ------ Monitoring ------
@@ -95,7 +95,7 @@ resource "aws_db_instance" "poc_rds_single_instance" {
   availability_zone    = "us-west-2a"
   network_type         = "IPV4"
   vpc_security_group_ids = [
-    "sg-0a627d789fef2836f" # iStore
+    "sg-0a627d789fef2836f"
   ]
 
   ### ------ Monitoring ------
@@ -156,7 +156,7 @@ resource "aws_db_instance" "poc_rds_single_instance" {
 #   availability_zone = "us-west-2a"
 #   network_type      = "IPV4"
 #   vpc_security_group_ids = [
-#     "sg-0a627d789fef2836f" # iStore
+#     "sg-0a627d789fef2836f"
 #   ]
 
 #   ### ------ Monitoring ------

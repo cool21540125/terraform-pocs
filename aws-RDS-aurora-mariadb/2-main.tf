@@ -44,7 +44,7 @@ resource "aws_rds_cluster" "poc_rds_cluster_cluster" {
   network_type         = "IPV4"
   availability_zones   = ["us-west-2a", "us-west-2b"]
   vpc_security_group_ids = [
-    "sg-0a627d789fef2836f" # iStore
+    "sg-0a627d789fef2836f"
   ]
 
   ### ------ Monitoring ------

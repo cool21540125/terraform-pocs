@@ -74,17 +74,23 @@ resource "aws_eks_node_group" "eks_amd64_nodegroup" {
   scaling_config {
     desired_size = 1
     min_size     = 1
-    max_size     = 3
+    max_size     = 5
   }
 
   lifecycle {
     ignore_changes = [
       release_version,
+      scaling_config[0].desired_size,
     ]
   }
 
   update_config {
     max_unavailable = 1
+  }
+
+  tags = {
+    "k8s.io/cluster-autoscaler/enabled"                            = "true"
+    "k8s.io/cluster-autoscaler/${aws_eks_cluster.eks_devops.name}" = "owned"
   }
 
   depends_on = [
@@ -128,11 +134,17 @@ resource "aws_eks_node_group" "eks_arm64_nodegroup" {
   lifecycle {
     ignore_changes = [
       release_version,
+      scaling_config[0].desired_size,
     ]
   }
 
   update_config {
     max_unavailable = 1
+  }
+
+  tags = {
+    "k8s.io/cluster-autoscaler/enabled"                            = "true"
+    "k8s.io/cluster-autoscaler/${aws_eks_cluster.eks_devops.name}" = "owned"
   }
 
   depends_on = [
